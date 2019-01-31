@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "tic-tac-toe",
   "version": "1.0.0",
   "description": "Bruteforce Tic Tac Toe all possible combinitions",
@@ -7,5 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "esdmr",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.3.3"
+  }
 }
