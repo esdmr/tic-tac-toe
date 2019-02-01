@@ -1,2 +1,7 @@
 tnode.js
 node_modules
+output.txt
+.vscode/
+npm-debug.log
+.env
+.DS_Store
