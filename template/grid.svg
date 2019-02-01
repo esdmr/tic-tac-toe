@@ -1,0 +1,16 @@
+<!DOCTYPE svg>
+<!--
+Dynamic Generated SVG Graphic
+
+https://github.com/esdmr/tic-tac-toe
+-->
+<svg width="256" height="256">
+
+<rect height="256" width="15" y="0" x="78"></rect>
+<rect height="256" width="15" y="0" x="171"></rect>
+<rect height="15" width="256" y="78" x="0"></rect>
+<rect height="15" width="256" y="171" x="0"></rect>
+
+{{}}
+
+</svg>
