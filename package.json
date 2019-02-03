@@ -5,16 +5,23 @@
   "description": "Bruteforce Tic Tac Toe all possible combinitions",
   "main": "./lib/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "semistandard --verbose | snazzy",
+    "fix": "semistandard --fix --verbose | snazzy",
+    "rm": "node -e \"require('rimraf').sync('./output/')\"",
     "start": "node ./lib/main.js"
   },
   "author": "esdmr",
   "license": "MIT",
   "dependencies": {
-    "colors": "1.3.3"
+    "colors": "1.3.3",
+    "rimraf": "^2.6.3"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/esdmr/tic-tac-toe.git"
+  },
+  "devDependencies": {
+    "semistandard": "^13.0.1",
+    "snazzy": "^8.0.0"
   }
 }
