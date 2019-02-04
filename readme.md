@@ -4,7 +4,7 @@ Outputs every single game
 
 # Downloads
 [the latest stable version](https://github.com/esdmr/tic-tac-toe/releases/latest).
-[the latest development version](https://https://github.com/esdmr/tic-tac-toe/archive/master.zip).
+[the latest development version](https://github.com/esdmr/tic-tac-toe/archive/master.zip).
 
 # Starting
 ```sh
