@@ -33,6 +33,6 @@ jobs:
         command: npm test
     
     -
-      store_artifact:
+      store_artifacts:
         path: ./
         destination: code
