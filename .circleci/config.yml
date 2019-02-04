@@ -6,30 +6,36 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.12
+    -
+      image: circleci/node:10.12
 
     steps:
-      - checkout:
-          name: Checking out
+    -
+      checkout:
+        name: Checking out
 
-      # Download and cache dependencies
-      - restore_cache:
-          name: Restoring node_modules cache
-          key: v1-dependencies-{{ checksum "package.json" }}
+    # Download and cache dependencies
+    -
+      restore_cache:
+        name: Restoring node_modules cache
+        key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-          name: Installing modules
-          command: npm install
+    -
+      run:
+        name: Installing modules
+        command: npm install
 
-      - save_cache:
-          name: Saving node_modules cache
-          paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
-        
-      - run:
-          name: Testing
-          command: npm test
+    -
+      save_cache:
+        name: Saving node_modules cache
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
+      
+    -
+      run:
+        name: Testing
+        command: npm test
   
   # publish:
   #   docker:
