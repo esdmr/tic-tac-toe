@@ -14,12 +14,10 @@ jobs:
 
       # Download and cache dependencies
       - restore_cache:
-          name: Restoring node_modules cache
-          key: v1-dependencies-{{ checksum "package.json" }}
+        name: Restoring node_modules cache
+        key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run:
-        name: Installing modules
-        command: npm install
+      - run: npm install
 
       - save_cache:
           name: Saving node_modules cache
@@ -27,9 +25,7 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
         
-      - run:
-        name: Testing
-        command: npm test
+      - run: npm test
   
   # publish:
   #   docker:
