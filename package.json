@@ -13,7 +13,7 @@
   "author": "esdmr",
   "license": "MIT",
   "dependencies": {
-    "archiver": "^3.0.0",
+    "archiver": "3.0.0",
     "colors": "1.3.3"
   },
   "repository": {
@@ -21,7 +21,7 @@
     "url": "git+https://github.com/esdmr/tic-tac-toe.git"
   },
   "devDependencies": {
-    "semistandard": "^13.0.1",
-    "snazzy": "^8.0.0"
+    "semistandard": "13.0.1",
+    "snazzy": "8.0.0"
   }
 }

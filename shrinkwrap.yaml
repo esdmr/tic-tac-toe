@@ -5,32 +5,32 @@ devDependencies:
   semistandard: 13.0.1
   snazzy: 8.0.0
 packages:
-  /acorn-jsx/5.0.1/acorn@6.0.6:
+  /acorn-jsx/5.0.1/acorn@6.0.7:
     dependencies:
-      acorn: 6.0.6
+      acorn: 6.0.7
     dev: true
     id: registry.npmjs.org/acorn-jsx/5.0.1
     peerDependencies:
       acorn: ^6.0.0
     resolution:
       integrity: sha512-HJ7CfNHrfJLlNTzIEUTj43LNWGkqpRLxm3YjAlcD0ACydk9XynzYsCBHxut+iqt+1aBXkx9UP/w/ZqMr13XIzg==
-  /acorn/6.0.6:
+  /acorn/6.0.7:
     dev: true
     engines:
       node: '>=0.4.0'
     hasBin: true
     resolution:
-      integrity: sha512-5M3G/A4uBSMIlfJ+h9W125vJvPFH/zirISsW5qfxF5YzEvXJCtolLoQvM5yZft0DvMcUrPGKPOlgEu55I6iUtA==
-  /ajv-keywords/3.3.0/ajv@6.7.0:
+      integrity: sha512-HNJNgE60C9eOTgn974Tlp3dpLZdUr+SoxxDwPaY9J/kDNOLQTkaDgwBUXAF4SSsrAwD9RpdxuHK/EbuF+W9Ahw==
+  /ajv-keywords/3.3.0/ajv@6.8.1:
     dependencies:
-      ajv: 6.7.0
+      ajv: 6.8.1
     dev: true
     id: registry.npmjs.org/ajv-keywords/3.3.0
     peerDependencies:
       ajv: ^6.0.0
     resolution:
       integrity: sha512-CMzN9S62ZOO4sA/mJZIO4S++ZM7KFWzH3PPWkveLhy4OZ9i1/VatgwWMD46w/XbGCBy7Ye0gCk+Za6mmyfKK7g==
-  /ajv/6.7.0:
+  /ajv/6.8.1:
     dependencies:
       fast-deep-equal: 2.0.1
       fast-json-stable-stringify: 2.0.0
@@ -38,7 +38,7 @@ packages:
       uri-js: 4.2.2
     dev: true
     resolution:
-      integrity: sha512-RZXPviBTtfmtka9n9sy1N5M5b82CbxWIR6HIis4s3WQTXDJamc/0gpCWNGz6EWdWp4DOfjzJfhz/AS9zVPjjWg==
+      integrity: sha512-eqxCp82P+JfqL683wwsL73XmFs1eG6qjw+RD3YHx+Jll1r0jNd4dh8QG9NYAeNGA/hnZjeEDgtTskgJULbxpWQ==
   /ansi-escapes/3.2.0:
     dev: true
     engines:
@@ -590,7 +590,7 @@ packages:
       integrity: sha512-qzm/XxIbxm/FHyH341ZrbnMUpe+5Bocte9xkmFMzPMjRaZMcXww+MpBptFvtU+79L362nqiLhekCxCxDPaUMBQ==
   /eslint/5.4.0:
     dependencies:
-      ajv: 6.7.0
+      ajv: 6.8.1
       babel-code-frame: 6.26.0
       chalk: 2.4.2
       cross-spawn: 6.0.5
@@ -636,8 +636,8 @@ packages:
       integrity: sha512-UIpL91XGex3qtL6qwyCQJar2j3osKxK9e3ano3OcGEIRM4oWIpCkDg9x95AXEC2wMs7PnxzOkPZ2gq+tsMS9yg==
   /espree/4.1.0:
     dependencies:
-      acorn: 6.0.6
-      acorn-jsx: /acorn-jsx/5.0.1/acorn@6.0.6
+      acorn: 6.0.7
+      acorn-jsx: /acorn-jsx/5.0.1/acorn@6.0.7
       eslint-visitor-keys: 1.0.0
     dev: true
     engines:
@@ -1601,8 +1601,8 @@ packages:
       integrity: sha1-g0D8RwLDEi310iKI+IKD9RPT/dQ=
   /table/4.0.3:
     dependencies:
-      ajv: 6.7.0
-      ajv-keywords: /ajv-keywords/3.3.0/ajv@6.7.0
+      ajv: 6.8.1
+      ajv-keywords: /ajv-keywords/3.3.0/ajv@6.8.1
       chalk: 2.4.2
       lodash: 4.17.11
       slice-ansi: 1.0.0
@@ -1719,7 +1719,7 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  archiver: ^3.0.0
+  archiver: 3.0.0
   colors: 1.3.3
-  semistandard: ^13.0.1
-  snazzy: ^8.0.0
+  semistandard: 13.0.1
+  snazzy: 8.0.0
