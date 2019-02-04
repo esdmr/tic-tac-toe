@@ -1,7 +1,3 @@
-# Javascript Node CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-javascript/ for more details
-#
 version: 2
 jobs:
   build:
@@ -14,7 +10,6 @@ jobs:
       checkout:
         name: Checking out
 
-    # Download and cache dependencies
     -
       restore_cache:
         name: Restoring node_modules cache
@@ -36,10 +31,8 @@ jobs:
       run:
         name: Testing
         command: npm test
-  
-  # publish:
-  #   docker:
-  #     - image: circleci/node:10.12
-
-  #   steps:
-  #     - checkout
+    
+    -
+      store_artifact:
+        path: ./
+        destination: code
