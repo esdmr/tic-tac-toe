@@ -1,6 +1,6 @@
 **/tnode.js
 **/node_modules
-**/output.txt
+**/output.*
 **/.vscode
 **/npm-debug.log
 **/.env

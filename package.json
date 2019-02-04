@@ -13,8 +13,8 @@
   "author": "esdmr",
   "license": "MIT",
   "dependencies": {
-    "colors": "1.3.3",
-    "rimraf": "^2.6.3"
+    "archiver": "^3.0.0",
+    "colors": "1.3.3"
   },
   "repository": {
     "type": "git",
