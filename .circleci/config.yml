@@ -23,7 +23,7 @@ jobs:
             - .
   test:
     docker:
-      - image: circle/node:10.12
+      - image: circleci/node:10.12
     steps:
       - attach_workspace:
           at: ~/project
@@ -32,7 +32,7 @@ jobs:
           command: npm test
   build:
     docker:
-      - image: circle/node:10.12
+      - image: circleci/node:10.12
     steps:
       - attach_workspace:
           at: ~/project
