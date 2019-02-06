@@ -2,7 +2,7 @@ version: 2
 jobs:
   init:
     docker:
-      - image: circle/node:10.12
+      - image: circleci/node:10.12
     steps:
       - checkout:
           name: Checking out
