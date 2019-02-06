@@ -1,51 +1,81 @@
 version: 2
 jobs:
+  init:
+    docker:
+      - image: circle/node:10.12
+    steps:
+      - checkout:
+          name: Checking out
+      - restore_cache:
+          name: Restoring node_modules cache
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: Installing modules
+          command: npm install
+      - save_cache:
+          name: Saving node_modules cache
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - presist_to_workspace:
+          root: ~/project
+          paths:
+            - \.
+  test:
+    docker:
+      - image: circle/node:10.12
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Testing
+          command: npm test
   build:
     docker:
-    -
-      image: circleci/node:10.12
-
+      - image: circle/node:10.12
     steps:
-    -
-      checkout:
-        name: Checking out
-
-    -
-      restore_cache:
-        name: Restoring node_modules cache
-        key: v1-dependencies-{{ checksum "package.json" }}
-
-    -
-      run:
-        name: Installing modules
-        command: npm install
-
-    -
-      save_cache:
-        name: Saving node_modules cache
-        paths:
-          - node_modules
-        key: v1-dependencies-{{ checksum "package.json" }}
-      
-    -
-      run:
-        name: Testing
-        command: npm test
-
-    -
-      run:
-        name: Running
-        command: npm start
-    
-    -
-      run:
-        name: Preparing artifacts
-        command: |
-          rm -rf artifacts/
-          mkdir artifacts/
-          mv output.* artifacts/
-    
-    -
-      store_artifacts:
-        path: ./artifacts/
-        destination: output
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Running
+          command: npm start
+      - run:
+          name: Preparing artifacts
+          command: |
+            rm -rf artifacts/
+            mkdir artifacts/
+            mv output.* artifacts/
+      - store_artifacts:
+          path: ./artifacts/
+          destination: output
+  github:
+    docker:
+      - image: cibuilds/github:0.10
+    steps:
+      - attach_workspace:
+        at: ~/project
+      - run:
+          name: Publish releases
+          command: |
+            VERSION=$(node -p "require('~/project/package.json').version")
+            ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -c ${CIRCLE_SHA1} -delete ${VERSION} ./artifacts/
+workflows:
+  version: 2
+  main:
+    jobs:
+        - init
+        - test:
+            requires:
+              - init
+        - build:
+            requires:
+              - init
+            filters:
+              tags:
+                only: &semVerRegEx /(?<=^[Vv]|^)(?:(?<major>(?:0|[1-9](?:(?:0|[1-9])+)*))[.](?<minor>(?:0|[1-9](?:(?:0|[1-9])+)*))[.](?<patch>(?:0|[1-9](?:(?:0|[1-9])+)*))(?:-(?<prerelease>(?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:0|[1-9](?:(?:0|[1-9])+)*))(?:[.](?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:0|[1-9](?:(?:0|[1-9])+)*)))*))?(?:[+](?<build>(?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:(?:0|[1-9])+))(?:[.](?:(?:(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?|(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)(?:[A-Za-z]|-)(?:(?:(?:0|[1-9])|(?:[A-Za-z]|-))+)?)|(?:(?:0|[1-9])+)))*))?)$/
+        - github:
+            requires:
+              - build
+            filters:
+              tags:
+                only: *semVerRegEx
