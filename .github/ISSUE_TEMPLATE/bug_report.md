@@ -6,26 +6,33 @@ labels: bug
 assignees: esdmr
 
 ---
+# Bug report
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+## Description
+> A clear and concise description of what the bug is.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. 
-2. 
+## Recreation
+> Steps to reproduce the behavior:
+
+1.
+2.
 3. 
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+## Expected behavior
+> A clear and concise description of what you expected to happen.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
 
-**System Information:**
- - OS:
- - OS Version:
- - App Version:
+## System Information:
+- OS: 
+- OS Version: 
+- App Version: 
 
-**Additional context**
-Add any other context about the problem here.
+## Attachments
+> If applicable, add any attachments to this section.
+<!-- Put a x in these braces to check them. -->
+- [ ] None
+
+## Additional context
+> Add any other context about the problem here.
+<!-- Put a x in these braces to check them. -->
+- [ ] None

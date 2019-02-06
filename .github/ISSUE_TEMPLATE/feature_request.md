@@ -6,15 +6,22 @@ labels: enhancement
 assignees: esdmr
 
 ---
+# Feature request
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is.
+## Description
+> A clear and concise description of what you want to happen.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+## Alternatives
+> A clear and concise description of any alternative solutions or features you have considered.
+<!-- Put a x in these braces to check them. -->
+- [ ] None
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+## Attachments
+> If applicable, add any attachments to this section.
+<!-- Put a x in these braces to check them. -->
+- [ ] None
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Additional context
+> Add any other context about the feature request here.
+<!-- Put a x in these braces to check them. -->
+- [ ] None
