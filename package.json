@@ -21,7 +21,7 @@
     "url": "git+https://github.com/esdmr/tic-tac-toe.git"
   },
   "devDependencies": {
-    "semistandard": "13.0.1",
+    "semistandard": "14.2.0",
     "snazzy": "8.0.0"
   }
 }
