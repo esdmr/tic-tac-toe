@@ -1,6 +1,6 @@
 name: Publish Checker
 
-on: [push, pull_request]
+on: [release]
 
 jobs:
   build:
