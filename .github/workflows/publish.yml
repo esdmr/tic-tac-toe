@@ -24,6 +24,11 @@ jobs:
         npm test
       env:
         CI: true
+    - name: npm start
+      run: |
+        npm start
+      env:
+        CI: true
     - uses: actions/upload-artifact@master
       with:
         name: Text
